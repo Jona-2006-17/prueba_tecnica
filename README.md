@@ -15,7 +15,7 @@ Este archivo contiene todos los requerimientos detallados de la prueba, incluyen
 
 ### Clonar el repositorio
 ```bash
-git clone <url-del-repositorio>
+git clone git@github.com:nojau/prueba_tecnica.git
 cd prueba
 ```
 
