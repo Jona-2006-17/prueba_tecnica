@@ -56,9 +56,23 @@ php artisan serve
 
 La aplicación estará disponible en: `http://localhost:8000`
 
+---
+
+## Tips opcionales
+
+Si tienes experiencia con testing automatizado en Laravel, puedes explorar cómo configurar un entorno de pruebas utilizando PHPUnit y un archivo `.env.testing`. No es obligatorio para completar la prueba ni excluyente en la evaluación, pero puede ayudarte a validar tu solución de forma más profesional.
+
+Pista: Investiga sobre el uso de `php artisan test` y la configuración de variables en `.env.testing` para entornos de test.
+
+**🚀 Para Configurar Testing:**
+```bash
+# Copiar template seguro
+cp .env.testing.example .env.testing
+
+# Generar APP_KEY para testing
+php artisan key:generate --env=testing
+```
 
 ---
 
 # **Buena suerte con la prueba! - Equipo de Desarrollo nojau**
-
----
