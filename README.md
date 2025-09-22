@@ -5,11 +5,11 @@ Incluye funcionalidades para crear, importar y eliminar usuarios de forma masiva
 
 ##  Funcionalidades implementadas
 
+- Corrección del bug en el botón **"Crear usuarios"**.  
 - Creación de usuarios de manera individual.  
-- Creación masiva de usuarios a partir de archivos CSV/XLSX.  
-- Vista previa antes de importar usuarios.  
-- Eliminación masiva de usuarios mediante selección con checkboxes.  
-- Validación de datos al importar (nombre, email, etc.).  
+- Creación masiva de usuarios desde archivos **CSV/XLSX** con validación de campos (nombre, email, teléfono, DNI).  
+- Eliminación masiva de usuarios.    
+- Opción para descargar plantilla de carga de usuarios.  
 
 
 ## Instalación y Configuración
