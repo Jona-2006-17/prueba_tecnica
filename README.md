@@ -16,7 +16,7 @@ Incluye funcionalidades para crear, importar y eliminar usuarios de forma masiva
 
 ### Clonar el repositorio
 ```bash
-git clone git@github.com:nojau/prueba_tecnica.git
+git clone https://github.com/Jona-2006-17/prueba_tecnica.git
 cd prueba
 ```
 
