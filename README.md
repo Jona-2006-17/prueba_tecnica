@@ -17,7 +17,7 @@ Incluye funcionalidades para crear, importar y eliminar usuarios de forma masiva
 ### Clonar el repositorio
 ```bash
 git clone https://github.com/Jona-2006-17/prueba_tecnica.git
-cd prueba
+cd prueba_tecnica
 ```
 
 ### 2. Instalar dependencias
