@@ -1,15 +1,16 @@
 # Prueba Técnica - Gestión de Usuarios
 
-Esta es una prueba técnica para evaluar habilidades de desarrollo con Laravel. El proyecto consiste en un sistema de gestión de usuarios con funcionalidades específicas que deben ser implementadas.
+Este proyecto consiste en un sistema de gestión de usuarios desarrollado en Laravel.  
+Incluye funcionalidades para crear, importar y eliminar usuarios de forma masiva, además de las operaciones básicas de CRUD.
 
-##  Antes de Empezar
+##  Funcionalidades implementadas
 
-**IMPORTANTE: Lee el archivo `user_requirements_doc.md` antes de comenzar a desarrollar.**
+- Creación de usuarios de manera individual.  
+- Creación masiva de usuarios a partir de archivos CSV/XLSX.  
+- Vista previa antes de importar usuarios.  
+- Eliminación masiva de usuarios mediante selección con checkboxes.  
+- Validación de datos al importar (nombre, email, etc.).  
 
-Este archivo contiene todos los requerimientos detallados de la prueba, incluyendo:
-- Bugs que deben ser corregidos
-- Nuevas funcionalidades a implementar
-- Criterios de aceptación
 
 ## Instalación y Configuración
 
@@ -23,15 +24,20 @@ cd prueba
 ```bash
 composer install
 ```
+### 3. Instalar la librería para importar/exportar archivos CSV/XLSX:
+```bash
+composer require maatwebsite/excel
+```
 
-### 3. Configurar el entorno
+
+### 4. Configurar el entorno
 ```bash
 # Copiar el archivo de configuraci�n
 cp .env.example .env
 
 ```
 
-### 4. Configurar la base de datos
+### 5. Configurar la base de datos
 Edita el archivo `.env` con tu configuración de base de datos, utilizar mysql:
 
 ```env
@@ -44,12 +50,12 @@ DB_PASSWORD=tu_password
 ```
 
 
-### 5. Ejecutar seeders
+### 6. Ejecutar seeders
 ```bash
 php artisan db:seed
 ```
 
-### 6. Levantar el servidor de desarrollo
+### 7. Levantar el servidor de desarrollo
 ```bash
 php artisan serve
 ```
@@ -58,21 +64,3 @@ La aplicación estará disponible en: `http://localhost:8000`
 
 ---
 
-## Tips opcionales
-
-Si tienes experiencia con testing automatizado en Laravel, puedes explorar cómo configurar un entorno de pruebas utilizando PHPUnit y un archivo `.env.testing`. No es obligatorio para completar la prueba ni excluyente en la evaluación, pero puede ayudarte a validar tu solución de forma más profesional.
-
-Pista: Investiga sobre el uso de `php artisan test` y la configuración de variables en `.env.testing` para entornos de test.
-
-**🚀 Para Configurar Testing:**
-```bash
-# Copiar template seguro
-cp .env.testing.example .env.testing
-
-# Generar APP_KEY para testing
-php artisan key:generate --env=testing
-```
-
----
-
-# **Buena suerte con la prueba! - Equipo de Desarrollo nojau**
