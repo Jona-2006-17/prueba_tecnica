@@ -48,10 +48,49 @@
                     cursor: pointer;
                 }
                 .btn-delete:hover { background: #c82333; }
+
+                #success-message {
+                    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+                    color: #155724;
+                    padding: 15px 20px;
+                    border-radius: 10px;
+                    margin: 15px 0;
+                    border-left: 5px solid #28a745;
+                    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);
+                    position: relative;
+                    overflow: hidden;
+                    font-weight: 500;
+                    font-size: 16px;
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                }
             </style>
         @endif
     </head>
     <body>
+        @if ($message = Session::get('success'))
+            <div id="success-message" class="alert alert-success">
+                {{ $message }}
+            </div>
+            
+            <script>
+                setTimeout(function() {
+                    document.getElementById('success-message').style.display = 'none';
+                }, 3000); // Se oculta después de 3 segundos
+            </script>
+        @endif
+        @if ($message = Session::get('file'))
+            <div id="success-message2" class="alert alert-success">
+                {{ $message }}
+            </div>
+            
+            <script>
+                setTimeout(function() {
+                    document.getElementById('success-message2').style.display = 'none';
+                }, 3000); // Se oculta después de 3 segundos
+            </script>
+        @endif
         <div class="container">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
                 <h1 style="margin-bottom: 0;">Lista de Usuarios</h1>
@@ -59,6 +98,8 @@
                     Crear usuarios
                 </a>
             </div>
+            <a href="{{route('users.mass-create')}}">Importar usuarios</a><br>
+            <a href="{{route('users.mass-delete')}}">Eliminar usuarios masivamente</a>
 
             <div class="user-count">
                 Total de usuarios: {{ $users->count() }}

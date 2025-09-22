@@ -10,9 +10,9 @@ Route::get('/users', [UsersController::class, 'index'])->name('users.index');
 // Individual user management
 Route::get('/users/create', [UsersController::class, 'create'])->name('users.create');
 Route::post('/users', [UsersController::class, 'store'])->name('users.store');
-Route::get('/users/{id}/edit', [UsersController::class, 'edit'])->name('users.edit');
-Route::put('/users/{id}', [UsersController::class, 'update'])->name('users.update');
-Route::delete('/users/{id}', [UsersController::class, 'destroy'])->name('users.destroy');
+Route::get('/users/{user_id}/edit', [UsersController::class, 'edit'])->name('users.edit');
+Route::put('/users/{user_id}', [UsersController::class, 'update'])->name('users.update');
+Route::delete('/users/{user_id}', [UsersController::class, 'destroy'])->name('users.destroy');
 
 // Mass user creation routes
 Route::get('/users/mass-create', [UsersController::class, 'massCreate'])->name('users.mass-create');
@@ -22,4 +22,8 @@ Route::get('/users/csv-template', [UsersController::class, 'csvTemplate'])->name
 
 // Mass user deletion routes
 Route::get('/users/mass-delete', [UsersController::class, 'massDelete'])->name('users.mass-delete');
-Route::delete('/users/mass-destroy', [UsersController::class, 'massDestroy'])->name('users.mass-destroy');
+Route::post('/users/mass-destroy', [UsersController::class, 'massDestroy'])->name('users.mass-destroy');
+
+Route::get('/users/mass-preview', function() {
+    return redirect()->route('users.mass-create')->with('error', 'Acceso directo no permitido');
+})->name('users.mass-preview.get');
